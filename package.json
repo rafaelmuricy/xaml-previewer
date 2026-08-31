@@ -1,0 +1,146 @@
+{
+  "name": "xaml-previewer",
+  "displayName": "XAML Previewer",
+  "description": "Extension to preview XAML and AXAML files",
+  "version": "0.0.3",
+  "publisher": "rafaelmuricy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaelmuricy/WinUIPreview"
+  },
+  "icon": "media/winui-preview-black.png",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:xaml",
+    "onLanguage:axaml",
+    "onView:xamlPreviewer.sidebar"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "xaml-previewer.openPreview",
+        "title": "Preview XAML",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "xaml-previewer.viewCode",
+        "title": "View Code"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "xaml-previewer.openPreview",
+          "when": "resourceExtname == .xaml || resourceExtname == .axaml || editorLangId == xaml || editorLangId == axaml",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "xaml-previewer.openPreview",
+          "when": "resourceExtname == .xaml || resourceExtname == .axaml || editorLangId == xaml || editorLangId == axaml",
+          "group": "navigation@1"
+        },
+        {
+          "command": "xaml-previewer.viewCode",
+          "when": "(resourceExtname == .xaml || resourceExtname == .axaml || editorLangId == xaml || editorLangId == axaml) && xaml-previewer.hasCodeBehind",
+          "group": "navigation@1.1"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "xaml",
+        "aliases": [
+          "XAML",
+          "xaml",
+          "AXAML"
+        ],
+        "extensions": [
+          ".xaml",
+          ".axaml"
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "XAML Previewer",
+      "properties": {
+        "xaml-previewer.openTarget": {
+          "type": "string",
+          "enum": [
+            "sidebar",
+            "editor"
+          ],
+          "enumDescriptions": [
+            "Open the preview in the XAML Previewer activity bar panel",
+            "Open the preview in an editor tab"
+          ],
+          "default": "sidebar",
+          "description": "Where the XAML preview is opened."
+        },
+        "xaml-previewer.hoverShadowColor": {
+          "type": "string",
+          "format": "color",
+          "default": "#7c3aed",
+          "description": "Color of the box-shadow shown when hovering a control in the preview."
+        },
+        "xaml-previewer.showUnknownTags": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show unrecognized XAML tags in the XAML Previewer output channel."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "xamlPreviewer",
+          "title": "XAML Previewer",
+          "icon": "media/xaml-preview.svg"
+        }
+      ]
+    },
+    "views": {
+      "xamlPreviewer": [
+        {
+          "type": "webview",
+          "id": "xamlPreviewer.sidebar",
+          "name": "Preview",
+          "when": "config.xaml-previewer.openTarget == sidebar"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/node": "~24.13.3",
+    "@types/vscode": "^1.125.0",
+    "@vscode/vsce": "^3.9.2",
+    "eslint": "^10.5.0",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.10.1"
+  }
+}

@@ -1,0 +1,11 @@
+---
+description: Do not create unit tests unless the user explicitly asks
+alwaysApply: true
+---
+
+# Sem testes unitários
+
+Não crie, atualize nem sugira testes unitários (arquivos `*.test.ts`, `*.spec.ts`, suítes Mocha/Jest, helpers de teste, scripts `test`/`pretest`) a menos que o usuário peça explicitamente.
+
+- Não adicione `src/test/` nem dependências de teste (`mocha`, `@vscode/test-cli`, etc.).
+- Ao implementar ou corrigir código, valide de outra forma (compilação, lint, verificação no preview) — não escreva testes.
