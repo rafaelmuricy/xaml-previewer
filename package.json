@@ -2,14 +2,14 @@
   "name": "xaml-previewer",
   "displayName": "XAML Previewer",
   "description": "Extension to preview XAML and AXAML files",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "publisher": "rafaelmuricy",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rafaelmuricy/WinUIPreview"
+    "url": "https://github.com/rafaelmuricy/xaml-previewer"
   },
-  "icon": "media/winui-preview-black.png",
+  "icon": "media/xaml-preview-black.png",
   "engines": {
     "vscode": "^1.125.0"
   },

@@ -2,7 +2,7 @@
 
 A Visual Studio Code extension that renders a live visual preview of XAML and AXAML files without running the app. Works with WinUI 3, MAUI, WPF and Avalonia projects.
 
-![Preview](https://raw.githubusercontent.com/rafaelmuricy/WinUIPreview/refs/heads/main/examples/ezgif-42994a32c7db7a62.gif)
+![Preview](https://raw.githubusercontent.com/rafaelmuricy/xaml-previewer/refs/heads/main/examples/ezgif-42994a32c7db7a62.gif)
 
 Open a `.xaml` or `.axaml` file and use **Preview XAML** from the editor title bar or the command palette. The markup is parsed and shown as HTML in a webview, so you can inspect layout and controls while you edit.
 

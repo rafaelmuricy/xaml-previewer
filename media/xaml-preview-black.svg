@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+	<rect width="24" height="24" fill="#000000"/>
+	<path fill="#FFFFFF" d="M3.75 6H16.25V15.25H18V5A2 2 0 0 0 16 3H4A2 2 0 0 0 2 5V17A2 2 0 0 0 4 19H15.25V17.25H3.75V6Z"/>
+	<path fill="#FFFFFF" fill-rule="evenodd" d="M5.35 12C6.95 8.85 13.05 8.85 14.65 12C13.05 15.15 6.95 15.15 5.35 12ZM6.8 12C8 10.05 11.9 10.05 13.1 12C11.9 13.95 8 13.95 6.8 12Z"/>
+	<circle cx="10" cy="12" r="1.15" fill="#FFFFFF"/>
+	<rect x="4.4" y="14.65" width="19.4" height="4.7" rx="0.5" fill="#000000"/>
+	<text
+		x="22.7"
+		y="18.05"
+		text-anchor="end"
+		font-family="Segoe UI, Consolas, 'Courier New', monospace"
+		font-size="3.7"
+		font-weight="700"
+		letter-spacing="-0.06"
+		fill="#8B5CF6"
+	>&lt;XAML /&gt;</text>
+</svg>
